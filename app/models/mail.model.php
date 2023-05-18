@@ -21,11 +21,11 @@ class Mail_Model
             $mail->Host = "smtp.gmail.com";
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = "tls";
-            $mail->Port = "587";
-            $mail->Username = "webshopprojekt22.23@gmail.com";
-            $mail->Password = "qzvvakfjitpgcxhb";
+            $mail->Port = "587"; //jgayfldljlhcasdy jgayfldljlhcasdy
+            $mail->Username = "webshop.app.23@gmail.com";
+            $mail->Password = "jgayfldljlhcasdy";
             $mail->Subject = "Newsletter";
-            $mail->setFrom("webshopprojekt22.23@gmail.com");
+            $mail->setFrom("webshop.app.23@gmail.com");
             $mail->isHTML(true);
             $email_template = $_SERVER['DOCUMENT_ROOT'] . "/app/public/Newsletter_activation.html";
             $message = file_get_contents($email_template);
@@ -106,10 +106,10 @@ class Mail_Model
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = "tls";
         $mail->Port = "587";
-        $mail->Username = "webshopprojekt22.23@gmail.com";
-        $mail->Password = "qzvvakfjitpgcxhb";
+        $mail->Username = "webshop.app.23@gmail.com";
+        $mail->Password = "jgayfldljlhcasdy";
         $mail->Subject = "Newsletter";
-        $mail->setFrom("webshopprojekt22.23@gmail.com");
+        $mail->setFrom("webshop.app.23@gmail.com");
         $mail->isHTML(true);
         $email_template = $_SERVER['DOCUMENT_ROOT'] . "/app/public/Newsletter.html";
 
@@ -150,12 +150,12 @@ class Mail_Model
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = "tls";
         $mail->Port = "587";
-        $mail->Username = "webshopprojekt22.23@gmail.com";
-        $mail->Password = "qzvvakfjitpgcxhb";
+        $mail->Username = "webshop.app.23@gmail.com";
+        $mail->Password = "jgayfldljlhcasdy";
         $mail->Subject = "Verify";
-        $mail->setFrom("webshopprojekt22.23@gmail.com");
+        $mail->setFrom("webshop.app.23@gmail.com");
         $mail->isHTML(true);
-        $mail->Body = "http://localhost:8888/app/public/verify.php?email=" . $email . "&code=" . $code . "";
+        $mail->Body = "http://localhost/app/verify?email=" . $email . "&code=" . $code . "";
         $mail->addAddress($email);
         $mail->send();
         $mail->smtpClose();
@@ -208,12 +208,12 @@ class Mail_Model
             $mail->SMTPAuth = true;
             $mail->SMTPSecure = "tls";
             $mail->Port = "587";
-            $mail->Username = "webshopprojekt22.23@gmail.com";
-            $mail->Password = "qzvvakfjitpgcxhb";
+            $mail->Username = "webshop.app.23@gmail.com";
+            $mail->Password = "jgayfldljlhcasdy";
             $mail->Subject = "Change password";
-            $mail->setFrom("webshopprojekt22.23@gmail.com");
+            $mail->setFrom("webshop.app.23@gmail.com");
             $mail->isHTML(true);
-            $mail->Body = "http://localhost:8888/app/controllers/reset_password.php?email=" . $email . "&code=" . $code . "";
+            $mail->Body = "http://localhost/app/reset_password?email=" . $email . "&code=" . $code . "";
             $mail->addAddress($email);
             $mail->send();
             $mail->smtpClose();
@@ -252,13 +252,32 @@ class Mail_Model
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = "tls";
         $mail->Port = "587";
-        $mail->Username = "webshopprojekt22.23@gmail.com";
-        $mail->Password = "qzvvakfjitpgcxhb";
+        $mail->Username = "webshop.app.23@gmail.com";
+        $mail->Password = "jgayfldljlhcasdy";
         $mail->Subject = "Request to change Email";
-        $mail->setFrom("webshopprojekt22.23@gmail.com");
+        $mail->setFrom("webshop.app.23@gmail.com");
         $mail->isHTML(true);
-        $mail->Body = "http://localhost:8888/app/change_email.php?id=" . $id . "&code=" . $code . "";
+        $mail->Body = "http://localhost/app/change_mail?id=" . $id . "&code=" . $code . "";
         $mail->addAddress($new_email);
+        $mail->send();
+        $mail->smtpClose();
+    }
+
+    public static function order_success_email($id, $email)
+    {
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Host = "smtp.gmail.com";
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = "tls";
+        $mail->Port = "587";
+        $mail->Username = "webshop.app.23@gmail.com";
+        $mail->Password = "jgayfldljlhcasdy";
+        $mail->Subject = "Order_success";
+        $mail->setFrom("webshop.app.23@gmail.com");
+        $mail->isHTML(true);
+        $mail->Body = "Vielen Dank für ihre Bestellung! Wir werden Sie auf dem Laufenden halten was den Status ihrer Bestellung angeht!";
+        $mail->addAddress($email);
         $mail->send();
         $mail->smtpClose();
     }

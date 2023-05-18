@@ -33,7 +33,7 @@
 
             setTimeout(() => {
                 document.getElementById('err_msg').innerText = '';
-            }, 3000);
+            }, 4000);
         }
 
         <!--  -->
@@ -179,7 +179,7 @@
         <div class="flex flex-col">
             <?php foreach ($err_arr as $err) : ?>
 
-                <p id="err_msg" class="font-semibold text-red-500"><?= $err ?></p>
+                <p id="err_msg" class="font-semibold text-red-500 font-Finlandica"><?= $err ?></p>
 
 
             <?php endforeach; ?>

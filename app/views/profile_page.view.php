@@ -1,8 +1,9 @@
 <?php require(__DIR__ . "\\partials\\header.php"); ?>
 <?php require(__DIR__ . "\\partials\\navigation.php"); ?>
+
 <div class="flex flex-col items-center space-y-20 pt-20">
     <p class="text-teal-600 pt-10 font-semibold text-xl md:text-2xl">Welcome back, <?= $_SESSION['username'] ?>.</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-2 md:px-32 md:px-36 ">
+    <div class="px-2 md:px-0 grid grid-cols-1 md:grid-cols-2 items-center gap-2 md:px-32 md:px-36 ">
         <a href="/app/account_settings">
             <div class=" border border-black bg-indigo-50 flex items-center justify-center  transition ease-in-out delay-150 md:hover:-translate-y-1 md:hover:translate-x-0 hover:translate-x-1 hover:-translate-y-1">
 
@@ -81,14 +82,14 @@
 
 
 
-                        <button type="submit" name="set" class="  cursor-pointer hover:opacity-75 border-r border-black px-2">Sub to Newsletter</button>
+                        <button type="submit" name="set" class="  cursor-pointer hover:opacity-75 border-r border-black px-2 " title="Sub to Newsletter">Sub to Newsletter</button>
 
                     </form>
                     <form action="<?php echo $_GET['path']; ?>" method="POST" class="">
 
 
 
-                        <button type="submit" name="unset" class="  cursor-pointer hover:opacity-75 border-r border-black px-2">Unsub from Newsletter</button>
+                        <button type="submit" name="unset" class="  cursor-pointer hover:opacity-75 border-r border-black px-2 " title="Unsub from Newsletter">Unsub from Newsletter</button>
 
                     </form>
 
@@ -106,7 +107,7 @@
 
 
 
-        <button type="submit" name="log_out" class="px-2 border border-black  cursor-pointer bg-black text-white hover:opacity-75">Log out</button>
+        <button type="submit" name="log_out" class="px-4 shadow-md md:transition md:hover:-translate-y-1 md:ease-in md:delay-300 py-1 border border-black  cursor-pointer bg-black text-white hover:opacity-75">Log out</button>
 
     </form>
 

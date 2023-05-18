@@ -85,7 +85,7 @@
         </a>
     </div>
     <form class="flex flex-col space-y-10 bg-slate-50 md:p-20" action="<?php echo $_GET['path']; ?>" method="POST">
-        <div class="grid grid-cols-2 justify-items-center">
+        <div class="grid grid-cols-1 md:grid md:grid-cols-2 justify-items-center">
             <label for="product_id">Product Id</label>
             <div class="flex flex-col space-y-2">
                 <input type="text" name="product_id" id="product_id" class="  border border-black hover:ring-1 hover:ring-black h-10  focus:outline-none px-2" x-on:keyup="find_images" x-model="prod_id_input">
@@ -94,7 +94,7 @@
             </div>
             <input class="hidden" type="text" name="current_image_id" id="" x-model="current_image_id">
         </div>
-        <div class="grid grid-cols-2 justify-items-center">
+        <div class="grid grid-cols-1 md:grid md:grid-cols-2 justify-items-center">
             <div class=" bg-gray-100 relative">
                 <span class="material-symbols-outlined absolute scale-50 inset-y-12 left-0 hover:cursor-pointer " @click="prev_image_path">
                     arrow_back_ios

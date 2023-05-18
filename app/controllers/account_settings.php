@@ -23,6 +23,7 @@ if (isset($_POST["submitName"])) {
     if ($validation) {
         User_Model::change_name($_POST["username"], $_SESSION["user_id"]);
         $username = User_Model::get_account_info($_SESSION["user_id"], "username");
+        $_SESSION['username'] = $username;
         $msg = "Update successful";
     }
 }
@@ -30,6 +31,7 @@ if (isset($_POST["submitName"])) {
 /* Bei Emailänderung wird eine Bestätigungsmail an die neue Adresse geschickt. 
    $email = $_POST["email"] damit die neue Email angezeigt wird, obwohl sie noch nicht in der DB steht*/
 if (isset($_POST["submitEmail"])) {
+
     $validation = Validation::email_check($_POST['email'], $emailErr) &
         Validation::email_validator($_POST['email'], $emailErr);
     $email = $_POST["email"];

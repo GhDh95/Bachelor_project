@@ -21,7 +21,17 @@ $routes = [
     '/app/rate' => '/app/controllers/rate.php',
     '/app/registration' => '/app/controllers/registration.php',
     '/app/request_password' => '/app/controllers/request_password.php',
-    '/app/404_not_found' => '/app/controllers/404_not_found.php'
+    '/app/404_not_found' => '/app/controllers/404_not_found.php',
+    '/app/payment' => '/app/controllers/payment.php',
+    '/app/order_success' => '/app/controllers/order_success.php',
+    '/app/registration_success' => '/app/views/registration_success.php',
+    '/app/registration_verify' => '/app/views/registration_verify.php',
+    '/app/change_email_success' => '/app/views/change_email_success.php',
+    '/app/verification_success' => '/app/views/registration_success.php',
+    '/app/change_mail' => '/app/public/change_mail.php',
+    '/app/reset_password' => '/app/controllers/reset_password.php',
+    '/app/request_passwprd' => '/app/controllers/request_password.php',
+    '/app/verify' => '/app/public/verify.php'
 
 ];
 

@@ -38,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['delete_prod'])) {
         $validation = Validation::id_validator($_POST['product_id']);
         if ($validation && Product_Model::delete_product($_POST['product_id'])) {
-            $update_info = "Product was deleted.";
+            $del_img = Product_Model::delete_correspoding_imgs($_POST['product_id']);
+            $update_info = "Product (and its correspondings fotos) was deleted.";
             header("refresh: 2");
         } else {
             $update_info = "Product was not deleted!";
